@@ -1,3 +1,13 @@
+INSERT INTO usuarios (username,password,enabled) VALUES ('patri','$2a$10$V0rIgL1NL5RsvxKqItwo6eCbtFjxrFrruk22f2X.ZQJyt7aMHjmZG',1);
+INSERT INTO usuarios (username,password,enabled) VALUES ('celia','$2a$10$g6ETKIr.0pFMyLRS0YKEAOX/iCLKaFFy3YwkUM./H1GWGnPKkdXta',1);
+
+INSERT INTO roles (nombre) VALUES ('ROLE_USER');
+INSERT INTO roles (nombre) VALUES ('ROLE_ADMIN');
+
+INSERT INTO usuarios_roles (usuario_id,role_id) VALUES (1,1);
+INSERT INTO usuarios_roles (usuario_id,role_id) VALUES (1,2);
+INSERT INTO usuarios_roles (usuario_id,role_id) VALUES (2,2);
+
 INSERT INTO compras (fecha,unidades) VALUES ('2022-03-03', '20');
 INSERT INTO compras (fecha,unidades) VALUES ('2022-03-03', '2');
 INSERT INTO compras (fecha,unidades) VALUES ('2022-03-03', '5');

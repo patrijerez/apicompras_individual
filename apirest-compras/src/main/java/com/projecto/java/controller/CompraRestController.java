@@ -66,14 +66,15 @@ public class CompraRestController {
 
 		Map<String, Object> response = new HashMap<>();
 
-		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
 
 		Date fechaI = formato.parse(fecha1);
 		Date fechaF = formato.parse(fecha2);
 
 		List<Compra> resultado = new ArrayList<Compra>();
-
+		
 		try {
+			
 			resultado = servicio.findByFechaBetween(fechaI, fechaF);
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al listar compras.");
@@ -88,7 +89,7 @@ public class CompraRestController {
 		}
 		response.put("mensaje", "Búsqueda con éxito.");
 		response.put("compra", resultado);
-
+		
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 
 	}
